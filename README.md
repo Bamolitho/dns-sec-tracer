@@ -34,7 +34,6 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 - 💬 **Interface web interactive** pour observer les échanges
 - 🛑 Détection des erreurs de validation DNSSEC
 - 📈 Affichage pédagogique étape par étape (infographie dynamique)
-- 🧠 But éducatif pour comprendre DNSSEC dans un contexte concret
 
 ---
 
@@ -42,34 +41,39 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 
 - **Langage principal** : Python 3
 - **Framework web** : Flask
-- **Librairie DNS** : dnspython
-- **Frontend** : HTML, CSS (Jinja2 Templates)
+- **Librairies** : socket, json, time, datetime, hmac, hashlib, re, sys, os,webbrowser, subprocess, signal...
+- **Frontend** : HTML, CSS 
 
 ---
 
 ## 📁 Structure du projet
+ Structure du projet
+bash
 /DNSSECTracer/
-├── client.py
-├── resolver.py
-├── dns_root.py
-├── dns_tld.py
-├── dns_auth.py
-├── dnssec.py
-├── dns_queries.log
-├── launch_dnssec_tracer.py   # Lance automatiquement les serveurs DNS et flask en background et ouvre le navigateur par défaut avec l'interface web
-├── dns_web_app/
-│   ├── app.py                # Le backend Flask
-│   ├── __init__.py           # (Pour un vrai package)
-│   ├── routes.py             # Toutes les routes Flask séparées
-│   ├── utils.py              # Fonctions annexes : clean logs, formattage...
-│   ├── history.txt           # Contient l'historique des résulats des résolutions de l'usager actuel
-├── templates/
-│   └── index.html            # Page d'accueil
-│   └── etapes.html           # Vue détaillée des étapes
-├── static/
-│   └── style.css             # CSS 
-└── README.md
-
+├── client.py                  # Client DNS pour tester les requêtes
+├── resolver.py                # Résolveur principal implémentant DNSSEC
+├── dns_root.py                # Serveur racine DNS
+├── dns_tld.py                 # Serveur TLD DNS (par exemple : .com, .fr)
+├── dns_auth.py                # Serveur DNS autoritaire (gère les domaines finaux)
+├── dnssec.py                  # Fonctions liées à la vérification DNSSEC
+├── dns_queries.log            # Fichier journal des requêtes DNS
+├── launch_dnssec_tracer.py    # Lance les serveurs + l'interface web automatiquement
+│
+├── dns_web_app/               # Application Web Flask
+│   ├── app.py                 # Backend principal Flask
+│   ├── __init__.py            # Rend le dossier utilisable comme module Python
+│   ├── routes.py              # Définit les routes de l'application web
+│   ├── utils.py               # Fonctions utilitaires (logs, formatage...)
+│   ├── history.txt            # Historique des résolutions de l'utilisateur
+│
+├── templates/                 # Templates HTML pour Flask
+│   ├── index.html             # Page d'accueil
+│   └── etapes.html            # Vue détaillée des étapes de résolution
+│
+├── static/                    # Fichiers statiques (CSS, JS, images...)
+│   └── style.css              # Feuille de style principale
+│
+└── README.md                  # Document de présentation du projet
 
 ---
 
