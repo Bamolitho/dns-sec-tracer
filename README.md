@@ -86,7 +86,7 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 
 ## Extensions possibles
 
-- Ajouter d'autres type de record (AAAA, MX, NS...). Actuellement A, PTR et CNAME sont implémentés.
+- Ajouter d'autres types d'enregirstrements (AAAA, MX, NS...). Actuellement A, PTR et CNAME sont implémentés.
 - Remplir et tenir à jour une base données contenant des vraies adresses IP
 - 🔐 Ajouter différents **algorithmes cryptographiques DNSSEC**
 - 🧠 Support multilingue pour l’aspect éducatif
