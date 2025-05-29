@@ -47,8 +47,7 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 ---
 
 ## 📁 Structure du projet
- Structure du projet
-bash
+```bash
 /DNSSECTracer/
 ├── client.py                  # Client DNS pour tester les requêtes
 ├── resolver.py                # Résolveur principal implémentant DNSSEC
@@ -74,7 +73,7 @@ bash
 │   └── style.css              # Feuille de style principale
 │
 └── README.md                  # Document de présentation du projet
-
+```
 ---
 
 ## Prérequis
