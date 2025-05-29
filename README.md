@@ -48,7 +48,7 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 
 ## 📁 Structure du projet
 ```bash
-/DNSSECTracer/
+/dns-sec-tracer/
 ├── client.py                  # Client DNS pour tester les requêtes
 ├── resolver.py                # Résolveur principal implémentant DNSSEC
 ├── dns_root.py                # Serveur racine DNS
@@ -97,8 +97,8 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 
 ```bash
 # 1. Cloner le dépôt
-git clone https://github.com/Bamolitho/dnssectracer.git
-cd DNSSECTracer
+git clone https://github.com/Bamolitho/dns-sec-tracer.git
+cd dns-sec-tracer
 
 # 2. Installer les dépendances
 pip install -r requirements.txt
