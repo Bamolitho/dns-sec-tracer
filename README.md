@@ -1,6 +1,6 @@
 # DNSSECTRACER
 
-> _Ce projet implémente une simulation pédagogique de la résolution DNS récursive avec vérification DNSSEC. L’objectif est de visualiser, étape par étape, comment un résolveur DNS obtient une réponse vérifiée depuis les serveurs racines jusqu’au serveur faisant autorité, tout en validant les signatures DNSSEC._
+> _DNSSECTracer est un simulateur interactif de résolution DNS sécurisée en 3 étapes (Root → TLD → Authoritative), avec vérification complète de l’intégrité via DNSSEC.Les adresses IP sont simulées pour l’apprentissage._
 
 ---
 
@@ -13,7 +13,7 @@
 - [Prérequis](#-prérequis)
 - [Extensions possibles](#-extensions-possibles)
 - [🛠️ Installation](#️-installation)
-- [👤 Auteurs](#-auteurs)
+- [👤 Auteur](#-auteur)
 
 ---
 
@@ -22,7 +22,8 @@
 Voici l’infographie montrant les étapes de la résolution DNS sécurisée avec DNSSEC :  
 Chaque étape valide les signatures numériques à l’aide des enregistrements DS et DNSKEY.
 
-![DNSSEC Simulation](./A_flat-design_digital_graphic_design_infographic_t.png)
+![DNSSEC Simulation](./illustration.png)
+> À VENIR
 
 ---
 
@@ -47,6 +48,27 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 ---
 
 ## 📁 Structure du projet
+/DNSSECTracer/
+├── client.py
+├── resolver.py
+├── dns_root.py
+├── dns_tld.py
+├── dns_auth.py
+├── dnssec.py
+├── dns_queries.log
+├── launch_dnssec_tracer.py   # Lance automatiquement les serveurs DNS et flask en background et ouvre le navigateur par défaut avec l'interface web
+├── dns_web_app/
+│   ├── app.py                # Le backend Flask
+│   ├── __init__.py           # (Pour un vrai package)
+│   ├── routes.py             # Toutes les routes Flask séparées
+│   ├── utils.py              # Fonctions annexes : clean logs, formattage...
+│   ├── history.txt           # Contient l'historique des résulats des résolutions de l'usager actuel
+├── templates/
+│   └── index.html            # Page d'accueil
+│   └── etapes.html           # Vue détaillée des étapes
+├── static/
+│   └── style.css             # CSS 
+└── README.md
 
 
 ---
@@ -55,15 +77,15 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 
 - Python 3.8 ou plus récent
 - Un environnement Unix/Linux ou Windows avec accès Internet
-- Navigateur web moderne
+- Navigateur web (Brave, Firefox, chrome...)
 
 ---
 
 ## Extensions possibles
 
-- 🔄 **Simuler la validation de chaînes DNSSEC corrompues**
+- Ajouter d'autres type de record (AAAA, MX, NS...). Actuellement A, PTR et CNAME sont implémentés.
+- Remplir et tenir à jour une base données contenant des vraies adresses IP
 - 🔐 Ajouter différents **algorithmes cryptographiques DNSSEC**
-- 🌍 **Visualisation de logs** (avec timestamps) pour chaque requête
 - 🧠 Support multilingue pour l’aspect éducatif
 
 ---
@@ -73,13 +95,13 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 ```bash
 # 1. Cloner le dépôt
 git clone https://github.com/Bamolitho/dnssectracer.git
-cd dnssectracer
+cd DNSSECTracer
 
 # 2. Installer les dépendances
 pip install -r requirements.txt
 
-# 3. Lancer le serveur Flask
-python app.py
+# 3. Lancer les serveurs (DNS et Flask) et ouvrir le navigateur par défaut pour afficher l'interface web (http://localhost:5000)
+python3 launch_dnssec_tracer.py
 ```
  ## 👤 Auteur
 
