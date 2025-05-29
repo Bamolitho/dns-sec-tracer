@@ -50,14 +50,19 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 ```bash
 /dns-sec-tracer/
 ├── client.py                  # Client DNS pour tester les requêtes
-├── resolver.py                # Résolveur principal implémentant DNSSEC
-├── dns_root.py                # Serveur racine DNS
-├── dns_tld.py                 # Serveur TLD DNS (par exemple : .com, .fr)
-├── dns_auth.py                # Serveur DNS autoritaire (gère les domaines finaux)
-├── dnssec.py                  # Fonctions liées à la vérification DNSSEC
-├── dns_queries.log            # Fichier journal des requêtes DNS
 ├── launch_dnssec_tracer.py    # Lance les serveurs + l'interface web automatiquement
 │
+├── serveurs/                  # Les serveurs utilisés pour la résolution 
+│   ├── resolver.py            # Résolveur principal implémentant DNSSEC
+│   ├── __init__.py            # Rend le dossier utilisable comme module Python
+│   ├── dns_root.py            # Serveur racine DNS
+│   ├── dns_tld.py             # Serveur TLD DNS (par exemple : .com, .org)
+│   ├── dns_auth.py            # Serveur DNS autoritaire (gère les domaines finaux)
+│
+├── dnssec/                    # Pour la vérification dnssec
+│   ├── dnssec.py              # Contenant la clé utilisée pour les signatures, et permet de vérifier l'authenticité des signatures
+│   ├── __init__.py            # Rend le dossier utilisable comme module Python
+│ 
 ├── dns_web_app/               # Application Web Flask
 │   ├── app.py                 # Backend principal Flask
 │   ├── __init__.py            # Rend le dossier utilisable comme module Python
@@ -71,6 +76,12 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 │
 ├── static/                    # Fichiers statiques (CSS, JS, images...)
 │   └── style.css              # Feuille de style principale
+│
+├── logs/                      # 
+│   ├── dns_queries.log        # Fichier journal des requêtes DNS
+│   └── dns_auth.py.log        #
+│   └── dns_root.py.log        #
+│   └── dns_tld.log            #  
 │
 └── README.md                  # Document de présentation du projet
 ```
