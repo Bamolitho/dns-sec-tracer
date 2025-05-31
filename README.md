@@ -75,11 +75,13 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 │   └── static/                    # Fichiers statiques (CSS, JS, images...)
 │       └── style.css              # Feuille de style principale
 │
-├── logs/                      # 
-│   ├── dns_queries.log        # Fichier journal des requêtes DNS
-│   └── dns_auth.log           #
-│   └── dns_root.log           #
-│   └── dns_tld.log            #  
+├──logs/
+├── dns_queries.log       # client
+├── resolver.log          # résolveur
+├── dns_root.log          # serveur root
+├── dns_tld.log           # serveur TLD
+├── dns_auth.log          # serveur autoritaire
+
 │
 └── README.md                  # Document de présentation du projet
 ```
