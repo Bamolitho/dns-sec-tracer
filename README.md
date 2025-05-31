@@ -69,18 +69,16 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 │   ├── routes.py              # Définit les routes de l'application web
 │   ├── utils.py               # Fonctions utilitaires (logs, formatage...)
 │   ├── history.txt            # Historique des résolutions de l'utilisateur
-│
-├── templates/                 # Templates HTML pour Flask
-│   ├── index.html             # Page d'accueil
-│   └── etapes.html            # Vue détaillée des étapes de résolution
-│
-├── static/                    # Fichiers statiques (CSS, JS, images...)
-│   └── style.css              # Feuille de style principale
+│   ├── templates/                 # Templates HTML pour Flask
+│   │   ├── index.html             # Page d'accueil
+│   │   └── etapes.html            # Vue détaillée des étapes de résolution
+│   └── static/                    # Fichiers statiques (CSS, JS, images...)
+│       └── style.css              # Feuille de style principale
 │
 ├── logs/                      # 
 │   ├── dns_queries.log        # Fichier journal des requêtes DNS
-│   └── dns_auth.py.log        #
-│   └── dns_root.py.log        #
+│   └── dns_auth.log           #
+│   └── dns_root.log           #
 │   └── dns_tld.log            #  
 │
 └── README.md                  # Document de présentation du projet
