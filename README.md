@@ -49,41 +49,45 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 ## 📁 Structure du projet
 ```bash
 /dns-sec-tracer/
-├── client.py                  # Client DNS pour tester les requêtes
-├── launch_dnssec_tracer.py    # Lance les serveurs + l'interface web automatiquement
+├── client.py                       # Client DNS pour tester les requêtes
+├── launch_dnssec_tracer.py        # Lance les serveurs + l'interface web automatiquement
 │
-├── serveurs/                  # Les serveurs utilisés pour la résolution 
-│   ├── resolver.py            # Résolveur principal implémentant DNSSEC
-│   ├── __init__.py            # Rend le dossier utilisable comme module Python
-│   ├── dns_root.py            # Serveur racine DNS
-│   ├── dns_tld.py             # Serveur TLD DNS (par exemple : .com, .org)
-│   ├── dns_auth.py            # Serveur DNS autoritaire (gère les domaines finaux)
+├── serveurs/                      # Les serveurs utilisés pour la résolution 
+│   ├── resolver.py                # Résolveur principal implémentant DNSSEC
+│   ├── __init__.py                # Rend le dossier utilisable comme module Python
+│   ├── dns_root.py                # Serveur racine DNS
+│   ├── dns_tld.py                 # Serveur TLD DNS (ex: .com, .org)
+│   ├── dns_auth.py                # Serveur DNS autoritaire (gère les domaines finaux)
 │
-├── dnssec/                    # Pour la vérification dnssec
-│   ├── dnssec.py              # Contenant la clé utilisée pour les signatures, et permet de vérifier l'authenticité des signatures
-│   ├── __init__.py            # Rend le dossier utilisable comme module Python
+├── dnssec/                        # Pour la vérification DNSSEC
+│   ├── dnssec.py                  # Vérification des signatures et gestion des clés
+│   ├── __init__.py                # Rend le dossier utilisable comme module Python
 │ 
-├── dns_web_app/               # Application Web Flask
-│   ├── app.py                 # Backend principal Flask
-│   ├── __init__.py            # Rend le dossier utilisable comme module Python
-│   ├── routes.py              # Définit les routes de l'application web
-│   ├── utils.py               # Fonctions utilitaires (logs, formatage...)
-│   ├── history.txt            # Historique des résolutions de l'utilisateur
+├── dns_web_app/                   # Application Web Flask
+│   ├── app.py                     # Backend principal Flask
+│   ├── __init__.py                # Rend le dossier utilisable comme module Python
+│   ├── routes.py                  # Définit les routes de l'application web
+│   ├── utils.py                   # Fonctions utilitaires (logs, formatage...)
+│   ├── history.txt                # Historique des résolutions de l'utilisateur
 │   ├── templates/                 # Templates HTML pour Flask
 │   │   ├── index.html             # Page d'accueil
 │   │   └── etapes.html            # Vue détaillée des étapes de résolution
-│   └── static/                    # Fichiers statiques (CSS, JS, images...)
+│   └── static/                    # Fichiers statiques (CSS, JS, images…)
 │       └── style.css              # Feuille de style principale
 │
-├──logs/
-├── dns_queries.log       # client
-├── resolver.log          # résolveur
-├── dns_root.log          # serveur root
-├── dns_tld.log           # serveur TLD
-├── dns_auth.log          # serveur autoritaire
-
+├── logs/                          # Fichiers de logs
+│   ├── all_dns_client.log         # Toutes les requêtes envoyées par le client
+│   ├── current_dns_client.log     # Requêtes client de la session en cours
+│   ├── all_dns_resolver.log       # Tout ce qui passe par le résolveur principal
+│   ├── current_dns_resolver.log   # Résolutions DNS de la session actuelle
+│   ├── all_dns_root.log           # Trafic géré par le serveur root
+│   ├── current_dns_root.log       # Requêtes root de la session courante
+│   ├── all_dns_tld.log            # Requêtes vers les serveurs TLD
+│   ├── current_dns_tld.log        # Session actuelle du serveur TLD
+│   ├── all_dns_auth.log           # Résolutions finales par le serveur autoritaire
+│   ├── current_dns_auth.log       # Logs en temps réel du serveur autoritaire
 │
-└── README.md                  # Document de présentation du projet
+└── README.md                      # Documentation et instructions du projet
 ```
 ---
 
