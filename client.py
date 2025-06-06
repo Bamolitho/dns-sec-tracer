@@ -20,7 +20,6 @@ from logs_utils import write_log, clear_current_resolution_log, finalize_resolut
 
 # Obtenir le chemin du dossier dnssec
 DNSSEC_DIR = os.path.normpath(os.path.join(BASE_DIR, ".", "dnssec")) 
-print(f"DNSSEC_DIR : {DNSSEC_DIR}")
 sys.path.insert(0, DNSSEC_DIR)
 from dnssec import verify_response  # 🔐 Vérification DNSSEC locale
 
