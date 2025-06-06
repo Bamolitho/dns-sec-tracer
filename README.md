@@ -1,6 +1,6 @@
 # DNSSECTRACER
 
-> _DNSSECTracer est un simulateur interactif de résolution DNS sécurisée en 3 étapes (Root → TLD → Authoritative), avec vérification complète de l’intégrité via DNSSEC.Les adresses IP sont simulées pour l’apprentissage._
+> _DNSSECTracer est un simulateur interactif de résolution récursive DNS sécurisée en 3 étapes (Root → TLD → Authoritative), avec vérification complète de l’intégrité via DNSSEC.
 
 ---
 
@@ -33,7 +33,7 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 - 🛡️ **Validation DNSSEC** à chaque niveau de la hiérarchie DNS
 - 💬 **Interface web interactive** pour observer les échanges
 - 🛑 Détection des erreurs de validation DNSSEC
-- 📈 Affichage pédagogique étape par étape (infographie dynamique)
+- Système de **logs complet** pour suivre les résolutions étape par étape.
 
 ---
 
@@ -58,6 +58,8 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 │   ├── dns_root.py                # Serveur racine DNS
 │   ├── dns_tld.py                 # Serveur TLD DNS (ex: .com, .org)
 │   ├── dns_auth.py                # Serveur DNS autoritaire (gère les domaines finaux)
+│   ├── logs_utils.py              # Script que les serveurs utilisent pour faire leurs logs
+│   └── start_dns_servers.sh       # Lance les serveurs dans des terminaux différents (utile pour déboggage; launch_dnssec_tracer.py suffit pour lancer le projet) 
 │
 ├── dnssec/                        # Pour la vérification DNSSEC
 │   ├── dnssec.py                  # Vérification des signatures et gestion des clés
@@ -68,12 +70,13 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 │   ├── __init__.py                # Rend le dossier utilisable comme module Python
 │   ├── routes.py                  # Définit les routes de l'application web
 │   ├── utils.py                   # Fonctions utilitaires (logs, formatage...)
-│   ├── history.txt                # Historique des résolutions de l'utilisateur
+│   ├── history.txt                # Historique des résolutions de l'utilisateur (tout)
 │   ├── templates/                 # Templates HTML pour Flask
 │   │   ├── index.html             # Page d'accueil
 │   │   └── etapes.html            # Vue détaillée des étapes de résolution
 │   └── static/                    # Fichiers statiques (CSS, JS, images…)
-│       └── style.css              # Feuille de style principale
+│       ├── style.css              # Feuille de style principale
+│       └── logHandler.js          # Fichier JS utilisé par etapes.html
 │
 ├── logs/                          # Fichiers de logs
 │   ├── all_dns_client.log         # Toutes les requêtes envoyées par le client
@@ -102,7 +105,7 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 ## Extensions possibles
 
 - Ajouter d'autres types d'enregirstrements (AAAA, MX, NS...). Actuellement A, PTR et CNAME sont implémentés.
-- Remplir et tenir à jour une base données contenant des vraies adresses IP
+- Faire des bases de données type MYSQL ou SQLite en lieu et place des fichiers .log
 - 🔐 Ajouter différents **algorithmes cryptographiques DNSSEC**
 - 🧠 Support multilingue pour l’aspect éducatif
 
