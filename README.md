@@ -90,6 +90,7 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 │   ├── all_dns_auth.log           # Résolutions finales par le serveur autoritaire
 │   ├── current_dns_auth.log       # Logs en temps réel du serveur autoritaire
 │
+├── requirements.txt               # Contient l'arsenal d'outils utilisés et à installer pour réaliser ce projet
 └── README.md                      # Documentation et instructions du projet
 ```
 ---
