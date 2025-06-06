@@ -103,7 +103,7 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 
 ---
 
-## [Extensions possibles](#-extensions-possibles)
+## Extensions possibles
 
 - Ajouter d'autres types d'enregirstrements (AAAA, MX, NS...). Actuellement A, PTR et CNAME sont implémentés.
 - Faire des bases de données type MYSQL ou SQLite en lieu et place des fichiers .log
