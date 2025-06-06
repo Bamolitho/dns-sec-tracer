@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DnssecTracer – DNSSEC Recursive Resolution</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>🔐 DnssecTracer</h1>
+    <form id="dns-form">
+        <input type="text" name="domain" placeholder="Enter domain (e.g., amolitho.tech)" required>
+        <button type="submit">Resolve</button>
+    </form>
+    <div>
+        <button onclick="downloadLogs()">📥 Télécharger logs des résolutions effectuées </button>
+        <button onclick="clearLogs()">🧹 Clear logs</button>
+        <a href="/etapes"><button>🔍 Voir les étapes</button></a>
+    </div>
+    <pre id="result"></pre>
+
+    <script>
+        const form = document.getElementById('dns-form');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            result.textContent = 'Résolution en cours...';
+            const formData = new FormData(form);
+            const domain = formData.get('domain');
+
+            try {
+                const response = await fetch('/resolve', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
+                result.textContent = data.result || data.error;
+            } catch (err) {
+                result.textContent = 'Erreur réseau';
+            }
+        });
+
+        function clearLogs() {
+            fetch('/clear_history', { method: 'POST' })
+                .then(() => result.textContent = 'Historique effacé');
+        }
+
+        function downloadLogs() {
+            fetch('/save_history')
+                .then(res => res.text())
+                .then(data => {
+                    const blob = new Blob([data], { type: 'text/plain' });
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = 'dns_logs.txt';
+                    link.click();
+                });
+        }
+    </script>
+</body>
+</html>

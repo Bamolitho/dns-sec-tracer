@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Étapes de résolution – DnssecTracer</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="section">
+        <h2>📂 Voir les étapes spécifiques par composant</h2>
+        <label for="log-selector"><strong>Type de logs :</strong></label><br>
+        <select id="log-selector" onchange="loadLog()">
+            <option value="">-- Sélectionner --</option>
+            <option value="client.all">Client - Tous</option>
+            <option value="client.current">Client - Actuels</option>
+            <option value="resolveur.all">Résolveur - Tous</option>
+            <option value="resolveur.current">Résolveur - Actuels</option>
+            <option value="root.all">Root - Tous</option>
+            <option value="root.current">Root - Actuels</option>
+            <option value="tld.all">TLD - Tous</option>
+            <option value="tld.current">TLD - Actuels</option>
+            <option value="autoritaire.all">Auth - Tous</option>
+            <option value="autoritaire.current">Auth - Actuels</option>
+        </select>
+
+        <div id="componentDesc"></div>
+
+        <pre id="logContent">🕓 En attente d'une sélection...</pre>
+
+        <br><br>
+        <button onclick="afficherLog()">📄 Afficher</button>
+        <button onclick="telechargerLog()">⬇️ Télécharger</button>
+        <button onclick="viderTousLesLogs()">🧹 Vider Tous</button>
+    </div>
+
+    <div class="section">
+        <a href="/"><button>⬅ Retour à l’accueil</button></a>
+    </div>
+
+    <script src="../static/logHandler.js"></script>
+</body>
+</html>
