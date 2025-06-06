@@ -109,6 +109,7 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 - Faire des bases de données type MYSQL ou SQLite en lieu et place des fichiers .log
 - 🔐 Ajouter différents **algorithmes cryptographiques DNSSEC**
 - 🧠 Support multilingue pour l’aspect éducatif
+- Centraliser la recherche du reposertoire courant (BASE_DIR) et de celui de dnssec dans un script path.py
 
 ---
 
