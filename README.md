@@ -11,7 +11,7 @@
 - [📦 Technologies utilisées](#-technologies-utilisées)
 - [📁 Structure du projet](#-structure-du-projet)
 - [Prérequis](#-prérequis)
-- [Extensions possibles](#-extensions-possibles)
+- [Extensions possibles](# -extensions-possibles)
 - [🛠️ Installation](#️-installation)
 - [👤 Auteur](#-auteur)
 
@@ -103,7 +103,7 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 
 ---
 
-## Extensions possibles
+## [Extensions possibles](#-extensions-possibles)
 
 - Ajouter d'autres types d'enregirstrements (AAAA, MX, NS...). Actuellement A, PTR et CNAME sont implémentés.
 - Faire des bases de données type MYSQL ou SQLite en lieu et place des fichiers .log
