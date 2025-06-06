@@ -11,7 +11,7 @@
 - [📦 Technologies utilisées](#-technologies-utilisées)
 - [📁 Structure du projet](#-structure-du-projet)
 - [Prérequis](#-prérequis)
-- [Extensions possibles](#-extensions-possibles)
+- [Extensions possibles](#-Extensions-possibles)
 - [🛠️ Installation](#️-installation)
 - [👤 Auteur](#-auteur)
 
