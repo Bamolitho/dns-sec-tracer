@@ -34,6 +34,7 @@ Comme résultat, on obtient une adresse IP associé au nom de domaine, une signa
 
 3. On peut voir les étapes passées pour résoudre le nom de domaine. Je fais une résolution via 3 serveurs (ROOT, TLD, AUTORITAIRE).
 ![Page d'acceuil pour voir les étapes effectuées par les serveurs](./screenshots/page_acceuil_etapes.png)
+
 On peut voir et télécharger l'hitorique des étapes passées pour toutes les résolutions faites dans la section active (... - Tous) ou uniquement pour la dernière résolution (... - Actuels).
 
 ![Choisir le serveur et le nombre de résolutions pour lesquelles on veut voir les étapes](./screenshots/selectionner_composant.png)
