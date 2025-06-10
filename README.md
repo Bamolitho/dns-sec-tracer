@@ -23,7 +23,8 @@ Voici l’infographie montrant les étapes de la résolution DNS sécurisée ave
 Chaque étape valide les signatures numériques à l’aide des enregistrements DS et DNSKEY.
 
 ![DNSSEC Simulation](./illustration.png)
-> À VENIR
+1. Il y a le script ... qui permet de lancer le programme et d'ouvrir l'interface web sur le navigateur par défaut à l'adresse localhost:5000. Voici à quoi ressemble la page d'acceuil ./screenshots/page_acceuil_index.png
+3. 
 
 ---
 
