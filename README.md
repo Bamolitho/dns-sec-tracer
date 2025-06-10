@@ -30,7 +30,7 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 ![Faire une résolution](./screenshots/une_resolution.png)
 Comme résultat, on obtient une adresse IP associé au nom de domaine, une signature issue de la chaine de confiance et un message qui dit si DNSSEC est valide ou non. Au cas ou la signature n'était pas valide, un message s'afficherait sur l'interface disant qu'il y a un problème avec la validation dnssec et la résolution ne serait pas finalisée.
 
- On peut télecharger l'historique des résolutions déjà effectuées ou bien vider complètement l'historique
+On peut télecharger l'historique des résolutions déjà effectuées ou bien vider complètement l'historique
 
 3. On peut voir les étapes passées pour résoudre le nom de domaine. Je fais une résolution via 3 serveurs (ROOT, TLD, AUTORITAIRE).
 ![Page d'acceuil pour voir les étapes effectuées par les serveurs](./screenshots/page_acceuil_etapes.png)
@@ -39,7 +39,18 @@ On peut voir et télécharger l'hitorique des étapes passées pour toutes les r
 
 ![Choisir le serveur et le nombre de résolutions pour lesquelles on veut voir les étapes](./screenshots/selectionner_composant.png)
 
-5. 
+4. Quand on sélectionne un composant (ROOT, TLD OU AUTORITAIRE), une description sommaire de celle-ci apparait
+![Description de la composante](./composant_resolveur.png)
+
+5. On peut alors choisir d'afficher, télécharger ou vider l'historique
+![Étapes éffectuées par le résolveur pour contribuer à la dernière résolution](./affichage_current_composant_resolveur.png)
+![Étapes éffectuées par le serveur autoritaire pour contribuer à la dernière résolution](./affichage_all_composant_auth.png)
+
+![Télécharger l'historique des étapes de toutes les contributions du serveur autoritaire](./telecharger_all_composant_auth.png)
+
+Quand on veut vider une historique, il y a un message qui est affiché pour dire que cette action est irréversible.
+![Vider une historique](./attention_clear.png)
+
 
 ---
 
