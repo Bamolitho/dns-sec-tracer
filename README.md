@@ -21,6 +21,7 @@
 L'image suivante illustre le fonctionnement d'une résolution dns récursive : 
 
 ![Fonctionnement d'une résolution dns récursive](./screenshots/dns_recursive.png)
+
 (cf. https://www.varonis.com/fr/blog/dns-kezako)
 
 J'ai implémenté exactement ce modèle, mais en plus, à chaque étape, des signatures numériques sont générées ou vérifiées pour garantir l'intégrité de la résolution.
