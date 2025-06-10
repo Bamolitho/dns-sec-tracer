@@ -30,14 +30,15 @@ Chaque étape valide les signatures numériques à l’aide des enregistrements 
 ![Faire une résolution](./screenshots/une_resolution.png)
 Comme résultat, on obtient une adresse IP associé au nom de domaine, une signature issue de la chaine de confiance et un message qui dit si DNSSEC est valide ou non. Au cas ou la signature n'était pas valide, un message s'afficherait sur l'interface disant qu'il y a un problème avec la validation dnssec et la résolution ne serait pas finalisée.
 
-On peut télecharger l'historique des résolutions déjà effectuées ou bien vider complètement l'historique
+ On peut télecharger l'historique des résolutions déjà effectuées ou bien vider complètement l'historique
 
 3. On peut voir les étapes passées pour résoudre le nom de domaine. Je fais une résolution via 3 serveurs (ROOT, TLD, AUTORITAIRE).
 ![Page d'acceuil pour voir les étapes effectuées par les serveurs](./screenshots/page_acceuil_etapes.png)
 On peut voir et télécharger l'hitorique des étapes passées pour toutes les résolutions faites dans la section active (... - Tous) ou uniquement pour la dernière résolution (... - Actuels).
+
 ![Choisir le serveur et le nombre de résolutions pour lesquelles on veut voir les étapes](./screenshots/selectionner_composant.png)
 
-4. 
+5. 
 
 ---
 
