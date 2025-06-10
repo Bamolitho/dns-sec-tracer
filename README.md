@@ -18,11 +18,12 @@
 ---
 
 ## 📸 Démo
+L'image suivante illustre le fonctionnement d'une résolution dns récursive : 
 
-Voici l’infographie montrant les étapes de la résolution DNS sécurisée avec DNSSEC :  
-Chaque étape valide les signatures numériques à l’aide des enregistrements DS et DNSKEY.
+![Fonctionnement d'une résolution dns récursive](./screenshots/dns_recursive.png)
+cf. ![](https://www.varonis.com/fr/blog/dns-kezako)
+J'ai implémenté exactement ce modèle, mais en plus, à chaque étape, des signatures numériques sont générées ou vérifiées pour garantir l'intégrité de la résolution.
 
-![DNSSEC Simulation](./illustration.png)
 1. Il y a le script ... qui permet de lancer le programme et d'ouvrir l'interface web sur le navigateur par défaut à l'adresse localhost:5000. Voici à quoi ressemble la page d'acceuil
 ![Page d'acceuil DNSSECTracer](./screenshots/page_acceuil_index.png)
 
