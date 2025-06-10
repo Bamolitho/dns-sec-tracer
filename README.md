@@ -40,16 +40,16 @@ On peut voir et télécharger l'hitorique des étapes passées pour toutes les r
 ![Choisir le serveur et le nombre de résolutions pour lesquelles on veut voir les étapes](./screenshots/selectionner_composant.png)
 
 4. Quand on sélectionne un composant (ROOT, TLD OU AUTORITAIRE), une description sommaire de celle-ci apparait
-![Description de la composante](./composant_resolveur.png)
+![Description de la composante](./screenshots/composant_resolveur.png)
 
 5. On peut alors choisir d'afficher, télécharger ou vider l'historique
-![Étapes éffectuées par le résolveur pour contribuer à la dernière résolution](./affichage_current_composant_resolveur.png)
-![Étapes éffectuées par le serveur autoritaire pour contribuer à la dernière résolution](./affichage_all_composant_auth.png)
+![Étapes éffectuées par le résolveur pour contribuer à la dernière résolution](./screenshots/affichage_current_composant_resolveur.png)
+![Étapes éffectuées par le serveur autoritaire pour contribuer à la dernière résolution](./screenshots/affichage_all_composant_auth.png)
 
-![Télécharger l'historique des étapes de toutes les contributions du serveur autoritaire](./telecharger_all_composant_auth.png)
+![Télécharger l'historique des étapes de toutes les contributions du serveur autoritaire](./screenshots/telecharger_all_composant_auth.png)
 
 Quand on veut vider une historique, il y a un message qui est affiché pour dire que cette action est irréversible.
-![Vider une historique](./attention_clear.png)
+![Vider une historique](./screenshots/attention_clear.png)
 
 
 ---
